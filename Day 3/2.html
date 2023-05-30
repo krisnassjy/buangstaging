@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='2.css' rel='stylesheet'>
+    <script src="page.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="div-header-first">
+            <h1 class="greet">Selamat datang di website ini</h1>
+        </div>
+        <div class="div-header-last">
+            <div class="box">
+                <form name="search">
+                    <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                </form>
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+    <!-- <nav class="nav">
+            <p>Ini nav</p>
+        </nav> -->
+    <!-- <article class="article">
+            <p>Ini article</p>
+        </article> -->
+    <aside class="aside">
+        <!-- <div class="div-sidebar">
+                <p>Ini sidebar 1</p>
+            </div> -->
+        <div class="aside-container">
+            <h1>
+                <a href="#menu">Click menu</a>
+            </h1>
+
+            <div class="popover" id="menu">
+                <div class='content'>
+                    <a href="#" class="close"></a>
+                    <div class='nav'>
+                        <ul class='nav_list'>
+
+                            <div class='nav_list_item'>
+                                <li><a href="2.html">Home</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="create.html">Create</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="read.html">Check list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="edit.html">Edit list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="delete.html">Delete list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="maps.html">Check maps</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="yt.html">Check video</a></li>
+                            </div>
+                            <div class='logout'>
+                                <li><a onClick="logout()">Logout</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="section">
+        <p>Ini section</p>
+    </section>
+    <footer class="footer">
+        <h2>&copy; Copywrite by <span class="name">Krisna Sanjaya</span></h2>
+    </footer>
+</body>
+
+</html>

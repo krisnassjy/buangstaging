@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let seq = [100, 90, 80, 12, 10]
+
+        function bubbleSort(array) {
+            var len = array.length;
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = 0; j < len - 1 - i; j++) {
+                    if (array[j] > array[j + 1]) {
+                        var temp = array[j]
+                        array[j] = array[j + 1]
+                        array[j + 1] = temp;
+                    }
+                    // console.log(array, ' indeks i ke-', j, array[j], ' indeks j ke-', j + 1, array[j + 1])
+                }
+            }
+            return array;
+        }
+
+
+        // function selectionSort(array){
+        //     var len = array.length
+        //     for (var i = 0; i < len; i++){
+        //         var minIndex = i
+        //         for (var j = i + 1; j < len- 1; j++)
+        //     }
+        // }
+        // console.log(bubbleSort(seq))
+
+        const array1 = [14, 2, 5, 6, 7, 8, 10, 13]
+        let sum = 0
+
+        for (let i = 0; i < array1.length; i++) {
+            sum += array1[i]
+        }
+
+        const mean = sum / array1.length
+        console.log(mean)
+
+
+        let mid = array1.length / 2
+        let median = 0
+        function Median(array1) {
+            array1 = array1.sort((a, b) => (a - b))
+            if (Math.floor(array1.length) % 2 === 0) {
+                median = (array1[mid] + array1[mid - 1]) / 2
+            } else {
+                median = array1[Math.floor(mid)]
+            }
+            return median
+        }
+
+        // console.log(Median(array1))
+
+        const array2 = [5, 2, 3, 4, 4, 3, 3]
+        function mode(array) {
+            const set = new Set(array)
+            const unique = Array.from(set)
+
+            let modulus = 0
+            let maxCounting = 0
+            let tempCounting = 0
+
+            unique.map((unique) => {
+                array.map((arr) => {
+                    if (arr === unique) {
+                        tempCounting++
+                    }
+                    if (tempCounting > maxCounting) {
+                        maxCounting = tempCounting
+                        modulus = arr
+                    }
+                })
+                tempCounting = 0
+            })
+
+            return modulus
+        }
+
+        console.log(mode(array2))
+
+        // function selectionSort()
+    </script>
+</body>
+
+</html>

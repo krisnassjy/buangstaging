@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: "Bangers", cursive;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 1700px;
+            width: 99vw;
+        }
+
+        .row-1 {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            height: 30%;
+            width: 100%;
+        }
+
+        .col-1,
+        .col-2 {
+            height: 100%;
+            width: 50%;
+        }
+
+        .col-1 {
+            background-color: #eeffee;
+            border-right: 4px solid black;
+        }
+
+        .col-2 {
+            flex-direction: column;
+        }
+
+        .mini-1,
+        .mini-2 {
+            height: 50%;
+            width: 100%;
+        }
+
+        .mini-1 {
+            background-color: #fcffee;
+        }
+
+        .mini-2 {
+            background-color: #eefcff;
+            border-top: 4px solid black;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .banner{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .row-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 35%;
+            width: 100%;
+        }
+
+        .row-2-list-product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 55%;
+            width: 100%;
+        }
+
+        .row-2-1 {
+            box-sizing: border-box;
+            border-top: 4px solid black;
+            border-bottom: 4px solid black;
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: #fbeeff;
+        }
+
+        .row-2-1-list-product {
+            box-sizing: border-box;
+            border-top: 4px solid black;
+            border-bottom: 4px solid black;
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: #fbeeff;
+        }
+
+        .row-2-2 {
+            padding: 40px;
+            box-sizing: border-box;
+            padding-left: 30px;
+            padding-right: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            background-color: #fff5ee;
+            flex-wrap: wrap;
+            gap: 9%;
+        }
+
+        .row-2-2-list-product {
+            justify-content: flex-start;
+            align-items: start;
+        }
+
+        .card {
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
+            width: 35vh;
+            height: 35vh;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .img-card {
+            overflow-y: hidden;
+            height: 50%;
+        }
+
+        .img-card img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            box-sizing: border-box;
+            height: 35%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .end-content {
+            height: 15%;
+            display: flex;
+            justify-content: right;
+        }
+
+        .icon {
+            height: 20px;
+            margin-right: 4%;
+            margin-top: 1%;
+        }
+
+
+        @media screen and (max-width: 1250px) {
+            .row-2-2 {
+                gap: 5%
+            }
+        }
+
+        @media screen and (max-width: 1162px) {
+            .row-2-2 {
+                gap: 3%
+            }
+        }
+
+        @media screen and (max-width: 1095px) {
+
+            
+            .row-2-2 {
+                gap: 5%
+            }
+
+            .card {
+                width: 30vh;
+                height: 30vh;
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width: 1020px) {
+            .row-2 {
+                height: 25%;
+            }
+
+            .row-2-list-product {
+                height: 60%;
+            }
+
+            .row-2-2 {
+                gap: 4%;
+            }
+
+            .card {
+                width: 30vh;
+                height: 30vh;
+            }
+        }
+
+        @media screen and (max-width: 978px) {
+            .row-2 {
+                height: 25%;
+            }
+
+            .row-2-list-product {
+                height: 60%;
+            }
+
+            .row-2-2 {
+                gap: 3%;
+            }
+
+            .card {
+                width: 30vh;
+                height: 30vh;
+            }
+        }
+
+        @media screen and (max-width: 940px) {
+            .row-2 {
+                height: 20%;
+            }
+
+            .row-2-list-product {
+                height: 65%;
+            }
+
+            .row-2-2 {
+                gap: 5%;
+            }
+
+            .card {
+                width: 26vh;
+                height: 26vh;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .row-2 {
+                height: 20%;
+            }
+
+            .row-2-list-product {
+                height: 65%;
+            }
+
+            .row-2-2 {
+                gap: 2%;
+            }
+
+            .card {
+                width: 26vh;
+                height: 26vh;
+                font-size: 12px;
+            }
+
+            .icon {
+            height: 15px;
+            margin-right: 6%;
+        }
+            
+        }
+
+        @media screen and (max-width: 785px) {
+            .row-1 {
+                flex-direction: column;
+            }
+
+            .col-1,
+            .col-2 {
+                width: 100%;
+            }
+
+            .col-1 {
+                height: 100%;
+            }
+
+            .col-2 {
+                display: none;
+            }
+
+            .mini-1,
+            .mini-2 {
+                height: 50%;
+            }
+
+            /* img {
+                width: 100%;
+            } */
+
+            .card:nth-child(3) {
+                display: none;
+            }
+
+            .card {
+                width: 30vh;
+                height: 30vh;
+                background-color: white;
+            }
+
+            .row-2-1 {
+                padding-left: 35px;
+            }
+
+            .row-2-2 {
+                padding: 30px;
+                gap: 5%;
+            }
+
+            .row-2 {
+                height: 25%;
+            }
+
+            .row-2-list-product {
+                height: 60%;
+            }
+        }
+
+        @media screen and (max-width: 711px) {
+            .card {
+                width: 28vh;
+                height: 28vh;
+            }
+
+            .row-2-2 {
+                gap: 6%;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            .card {
+                width: 25vh;
+                height: 25vh;
+            }
+
+            .row-2-2 {
+                gap: 7%;
+            }
+        }
+
+        @media screen and (max-width: 631px) {
+            .card {
+                font-size: 13px !important;
+                width: 25vh;
+                height: 25vh;
+            }
+
+            .row-2-2 {
+                gap: 3%;
+            }
+
+            .icon {
+                height: 15px;
+                width: auto;
+                margin-right: 5%;
+                margin-top: 1%;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            .row-1 {
+                flex-direction: column;
+            }
+
+            .col-1,
+            .col-2 {
+                width: 100%;
+            }
+
+            .col-2 {
+                display: none;
+            }
+
+            .col-1 {
+                height: 100%;
+            }
+
+            .mini-1,
+            .mini-2 {
+                height: 50%;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .card:nth-child(3),
+            .card:nth-child(2) {
+                display: none;
+            }
+
+            .card {
+                width: 30vh;
+                height: 30vh;
+                background-color: white;
+            }
+
+            .row-2-1 {
+                padding-left: 30px;
+            }
+
+            .row-2-2 {
+                gap: 10%;
+            }
+        }
+
+        @media screen and (max-width: 495px) {
+            .card:nth-child(1) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row-1">
+            <div class="col-1">
+                <img
+                class="banner"
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+            </div>
+            <div class="col-2">
+                <div class="mini-1"></div>
+                <div class="mini-2"></div>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="row-2-1">
+                <h1>Best Product</h1>
+            </div>
+            <div class="row-2-2">
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-2 row-2-list-product">
+            <div class="row-2-1 row-2-1-list-product">
+                <h1>List Product</h1>
+            </div>
+            <div class="row-2-2 row-2-2-list-product">
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-card">
+                        <img
+                            src="https://cdn.dribbble.com/users/1044993/screenshots/12436018/media/4af5b5c62eba141322e11e2747a1d9fd.png?compress=1&resize=400x300" />
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Binatang 1</p>
+                        </div>
+                        <div>
+                            <p>Rp. 10000</p>
+                        </div>
+                        <div>
+                            <p>Bisa membersihkan rumah</p>
+                        </div>
+                    </div>
+                    <div class="end-content">
+                        <img class="icon" width="auto !important" height="10px"
+                            src="https://icon-library.com/images/shopping-bag-icon-png/shopping-bag-icon-png-0.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

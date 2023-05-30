@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="page.js"></script>
+    <link href='2.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="greet">Read List</h1>
+    </header>
+    <!-- <nav class="nav">
+            <p>Ini nav</p>
+        </nav> -->
+    <!-- <article class="article">
+            <p>Ini article</p>
+        </article> -->
+    <aside class="aside">
+        <!-- <div class="div-sidebar">
+                <p>Ini sidebar 1</p>
+            </div> -->
+        <div class="aside-container">
+            <h1>
+                <a href="#menu">Click menu</a>
+            </h1>
+
+            <div class="popover" id="menu">
+                <div class='content'>
+                    <a href="#" class="close"></a>
+                    <div class='nav'>
+                        <ul class='nav_list'>
+
+                            <div class='nav_list_item'>
+                                <li><a href="2.html">Home</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="create.html">Create</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="read.html">Check list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="edit.html">Edit list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="delete.html">Delete list</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="maps.html">Check maps</a></li>
+                            </div>
+                            <div class='nav_list_item'>
+                                <li><a href="yt.html">Check video</a></li>
+                            </div>
+                            <div class='logout'>
+                                <li><a onClick="logout()">Logout</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="section">
+        <div class="section-1">
+            <div class="form">
+                <div class="input-container ic1">
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Nama Hewan</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="price" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="price" class="placeholder">Harga</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="desc" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="desc" class="placeholder">Email</>
+                </div>
+                <button type="text" class="submit" onClick="create()">Submit</button>
+            </div>
+        </div>
+        <div class="section-2">
+            <table id="customers">
+                <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                    <td><button onclick="removeRow(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Berglunds snabbköp</td>
+                    <td>Christina Berglund</td>
+                    <td>Sweden</td>
+                    <td><button onclick="removeRow(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                    <td><button onclick="removeRow(this)">Remove</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Ini footer</p>
+    </footer>
+    <script>
+        // Function to add a new row to the table
+        function addRow() {
+            var table = document.getElementById("customers");
+            var newRow = table.insertRow(table.rows.length - 1); // Insert before the last row
+
+            var companyCell = newRow.insertCell(0);
+            var contactCell = newRow.insertCell(1);
+            var countryCell = newRow.insertCell(2);
+            var actionCell = newRow.insertCell(3);
+
+            companyCell.innerHTML = "New Company";
+            contactCell.innerHTML = "New Contact";
+            countryCell.innerHTML = "New Country";
+            actionCell.innerHTML = '<button onclick="removeRow(this)">Remove</button>';
+        }
+
+        // Function to remove a row from the table
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+
+</html>

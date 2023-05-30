@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //functional constructor
+        // function Barang(name, price){
+        //     this.name = name
+        //     this.price = price
+        //     this.detail = function(){
+        //         return this.name + " " + this.price
+        //     }
+        // }
+
+        // const barang1 = new Barang('Toshiba', 500)
+        // console.log(barang1) //{name: 'Toshiba', price: 500}
+
+        //class
+        // class Barang{
+        //     constructor(name, price){
+        //         this.name = name
+        //         this.price = price
+        //     }
+
+        //     detail(){
+        //         return this.name + ' ' + this.price
+        //     }
+        // }
+
+        // const barang1 = new Barang('Toshiba', 500)
+        // console.log(barang1) //{name: 'Toshiba', price: 500}
+
+        //encapsulation
+        // class Barang{
+        //     constructor(name, price){
+        //         var name = name //atribut name tidak dapat di console/ubah dari luar
+        //         this.price = price
+        //     }
+
+        //     detail(){
+        //         return this.name + ' ' + this.price
+        //     }
+        // }
+
+        // const barang1 = new Barang('Toshiba', 500)
+        // console.log(barang1) //{price: 500}
+
+        //inheritance
+        // class People{
+        //     constructor(name, age){
+        //         this.name = name
+        //         this.age = age
+        //     }
+        // }
+
+        // class Person extends People{
+        //     constructor(name, age, job){
+        //         super(name, age)
+        //         this.job = job
+        //     }
+        // }
+
+        // const person1 = new Person('Krisna', 21, 'Frontend Developer')
+        // console.log(person1) //{name: 'Krisna', age: 21, job: 'Frontend Developer'}
+
+        //polymorphism
+        //  class People{
+        //     constructor(name, age){
+        //         this.name = name
+        //         this.age = age
+        //     }
+
+        //     greet(){
+        //         return `Halo, Selamat Pagi ${this.name}`
+        //     }
+        // }
+
+        // class Person extends People{
+        //     constructor(name, age, job){
+        //         super(name, age)
+        //         this.job = job
+        //     }
+        // }
+
+        // const person1 = new Person('Krisna', 21, 'Frontend Developer')
+        // console.log(person1.greet()) //Halo, Selamat Pagi Krisna
+
+        //abstraction
+        class Ongkir {
+            constructor(berat) {
+                var berat = berat
+                var totalBiaya = function () {
+                    return berat * 100
+                }
+            }
+            tampilBiaya() {
+                return totalBiaya()
+            }
+
+        }
+
+        const laptop = new Ongkir(4)
+        console.log(laptop.tampilBiaya())
+
+
+    </script>
+</body>
+
+</html>

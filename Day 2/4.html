@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var person = {
+        //     name: 'John',
+        //     age: 25,
+        //     greet: function (){
+        //         console.log("Hello my name is: ", this.name)
+        //     }
+        // }
+
+        // person.greet()
+
+        // class Animal {
+        //     constructor(name, species, color){
+        //         this.name = name
+        //         this.species = species
+        //         this.color = color
+        //     }
+        //     makeSound(){
+        //         console.log('Haloo')
+        //     }
+        // }
+
+        // class Bird extends Animal{
+        //     fly(){
+        //         console.log('hai '+ this.name)
+        //     }
+        // }
+
+        // const halo = new Bird('burung', 2, 2)
+        // console.log(halo)
+
+        function Ongkir(berat){
+            this.pajak = 500
+            this.biaya = function(){
+                return berat * 1000
+            }
+
+            this.totalBiaya = function(){
+                return this.biaya() * this.pajak
+            }
+        }
+
+        const laptop = new Ongkir(4)
+        console.log(laptop.totalBiaya())
+
+    </script>
+</body>
+</html>

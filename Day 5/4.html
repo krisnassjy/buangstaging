@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = [
+            {
+                id: 1,
+                username: 'krisna',
+                address: 'Jakarta'
+            },
+            {
+                id: 2,
+                username: 'Halo',
+                address: 'Bogor'
+            }
+        ]
+        let transactions = [
+            {
+                user_id: 1,
+                transaction: [
+                    {
+                        id: 1,
+                        status: 'Selesai'
+                    },
+                    {
+                        id: 2,
+                        status: 'Sedang dikirim'
+                    }
+                ]
+            },
+            {
+                user_id: 2,
+                transaction: [
+                    {
+                        id: 1,
+                        status: 'Selesai'
+                    },
+                    {
+                        id: 2,
+                        status: 'Sedang retur barang'
+                    }
+                ]
+            }
+        ]
+
+        let detailTransaction = [
+            {
+                transaction_id: 1,
+                transaction_detail: [
+                    {
+                        id: 1,
+                        product: 'Minyak Goreng',
+                        totalAmount: 50000,
+                        qty: 3
+                    }
+                ]
+            }
+        ]
+
+        async function login(username) {
+            let result = await new Promise((res, rej) => {
+                setTimeout(() => {
+                    let filter = user.filter(e => e.username === username)
+                    res(filter)
+                }, 1000)
+            })
+
+            return result
+        }
+
+        async function getTransaction(data) {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res(transactions.filter((item) => {
+                        return item.user_id === data[0].id
+                    }))
+                }, 1000)
+            })
+        }
+
+        async function getDetailTransaction(data) {
+            console.log(data)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res(detailTransaction.filter((item) => {
+                        return item.transaction_id === data[0].transaction[0].id
+                    }))
+                }, 1000)
+            })
+        }
+
+
+
+        login('krisna')
+            .then(val => {
+                return getTransaction(val)
+            })
+            .then((res) => {
+                return getDetailTransaction(res)
+            })
+            .then(res => console.log(res[0].transaction_detail))
+            .catch(err => console.log(err))
+
+        async function getData() {
+            let user = await login('krisna')
+            let transaction = await getTransaction(user)
+            let detail = await getDetailTransaction(transaction)
+
+            console.log(detail[0].transaction_detail)
+        }
+
+        getData()
+    </script>
+</body>
+
+</html>

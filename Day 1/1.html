@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const users = [{ email: "azim@gmail.com", password: "123" }, { email: "azim2@gmail.com", password: "123" }]
+        const usersBaru = [{ email: "azim3@gmail.com", password: "123" }]
+
+        function addUser(data) {
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email === data.email) {
+                    console.log('Email sudah ada')
+                    return;
+                }
+            }
+            users.push(data)
+        }
+
+        addUser(usersBaru)
+        console.log(users)
+    </script>
+</body>
+
+</html>
