@@ -1,22 +1,62 @@
-body{
+body {
     overflow-x: hidden;
 }
 
-.card{
+.card {
     border: 1px solid transparent;
     transition: transform 0.3s ease;
 }
 
-.card:hover{
-    transform: scale(1.03);
+.card:hover {
+    transform: scale(1.1);
 }
 
-img:hover{
+img:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-body img{
+.card-body img {
     border-radius: 24px;
     transition: box-shadow 0.3s ease;
 }
 
+
+.placeholder {
+    background-color: grey;
+    animation: skeleton-animation 1s infinite alternate;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .coverage{
+        justify-content: center;
+    }
+
+    .text-coverage{
+        text-align: center;
+    }
+
+    .button-container{
+        padding: 0px;
+    }
+
+    .card{
+        width: 50%;
+    }
+
+  
+
+    .category-container{
+        display: flex;
+        justify-content: center;
+    }
+}
